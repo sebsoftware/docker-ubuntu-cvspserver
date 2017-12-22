@@ -1,0 +1,19 @@
+version: "2"
+services:
+
+    cvspserver:
+        image: stjheitc/ubuntu-cvspserver
+        container_name: cvspserver
+        environment:
+          - CVSROOT=/home2/cvsroot
+        ports:
+          - '2401:2401'
+        volumes:
+          - '/Users/Server/Docker/data/cvsroot:/home2/cvsroot'
+        mem_limit: 1G
+        memswap_limit: 1G
+        restart: always
+
+networks:
+  default:
+
